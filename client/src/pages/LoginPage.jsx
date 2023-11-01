@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+/* eslint-disable react/no-unescaped-entities */
 export default function LoginPage() {
     return(
         <div className="mt-4 grow flex items-center justify-around">
@@ -7,6 +10,13 @@ export default function LoginPage() {
                     <input type="email" name="" placeholder="yourname@mail.com" />
                     <input type="password" name="" placeholder="password" />
                     <button className="primary">Logina</button>
+                    <div className="text-center py-2 text-gray-500">
+                        Don't have an accont yet? <Link to={'/register'}
+                        className="underline text-black"
+                        >
+                             Register Now
+                        </Link>
+                    </div>
                 </form>
             </div>
         </div>
