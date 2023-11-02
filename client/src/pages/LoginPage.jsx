@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 /* eslint-disable react/no-unescaped-entities */
@@ -17,7 +18,7 @@ export default function LoginPage() {
         <div className="mt-4 grow flex items-center justify-around">
             <div className="mb-32">
                 <h1 className="text-4xl text-center mb-4">Logina</h1>
-                <form className="max-w-md mx-auto" onSubmit={handleLoginSubmit()}>
+                <form className="max-w-md mx-auto" onSubmit={handleLoginSubmit}>
                     <input type="email"
                             placeholder="yourname@mail.com" 
                             value={email}
