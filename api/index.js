@@ -47,7 +47,7 @@ app.post('/login', async (req, res) => {
         if(passOk) {
             jwt.sign({ email: user.email, id: user._id }, jwtSecret, {}, (err, token) => {
                 if(err) throw err;
-                res.cookie('token', token).json('Passed Ok');
+                res.cookie('token', token).json(user);
             });
         } else {
             res.status(422).json('Pass Not Ok');
