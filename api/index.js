@@ -35,4 +35,10 @@ app.post('/register', async (req, res) => {
     
 });
 
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+
+    await UserModel.findOne({ email });
+})
+
 app.listen(4000);
