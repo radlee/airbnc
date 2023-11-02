@@ -1,14 +1,23 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 /* eslint-disable react/no-unescaped-entities */
 export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    async function handleLoginSubmit(ev) {
+        ev.preventDefault();
+        try {
+            await axios.post('/login', { email, password })
+        } catch (error) {
+            alert('Login failed.')
+        }
+    }
     return(
         <div className="mt-4 grow flex items-center justify-around">
             <div className="mb-32">
                 <h1 className="text-4xl text-center mb-4">Logina</h1>
-                <form className="max-w-md mx-auto">
+                <form className="max-w-md mx-auto" onSubmit={handleLoginSubmit()}>
                     <input type="email"
                             placeholder="yourname@mail.com" 
                             value={email}
