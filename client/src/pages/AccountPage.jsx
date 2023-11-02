@@ -15,8 +15,8 @@ export default function AccountPage() {
 
     return (
         <div>
-            <nav className="w-full flex justify-center mt-8 gap-4">
-                <Link className="py-2 px-6  bg-gray-300 rounded-full" to={'/account'} > My Profile</Link>
+            <nav className="w-full flex justify-center mt-8 gap-2">
+                <Link className="py-2 px-6  bg-primary text-white rounded-full" to={'/account'} > My Profile</Link>
                 <Link className="py-2 px-6 " to={'/account/bookings'} >My Bookings</Link>
                 <Link className="py-2 px-6 " to={'/account/places'} >My Accomodations</Link>
             </nav>
